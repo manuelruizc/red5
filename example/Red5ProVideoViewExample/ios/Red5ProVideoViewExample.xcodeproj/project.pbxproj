@@ -14,6 +14,7 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		38C89D9801C205F4C78E3609 /* libPods-Red5ProVideoViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6824C4E8F60A3A989BAF55D /* libPods-Red5ProVideoViewExample.a */; };
 		48776EC823C89471004125FD /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776EC723C89471004125FD /* libc++.1.tbd */; };
 		48776ECA23C89479004125FD /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776EC923C89479004125FD /* libiconv.2.4.0.tbd */; };
 		48776ECC23C89484004125FD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776ECB23C89484004125FD /* libz.tbd */; };
@@ -23,7 +24,6 @@
 		48776ED623C894A4004125FD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776ED523C894A4004125FD /* CoreFoundation.framework */; };
 		48776ED823C894AC004125FD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776ED723C894AC004125FD /* VideoToolbox.framework */; };
 		48776EDA23C896AB004125FD /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48776ED923C896AB004125FD /* libbz2.tbd */; };
-		B96AB00F1B7F14FCCE5ACE12 /* libPods-Red5ProVideoViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5242FCABDE0AA12884B8293F /* libPods-Red5ProVideoViewExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +37,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Red5ProVideoViewExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Red5ProVideoViewExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Red5ProVideoViewExample/main.m; sourceTree = "<group>"; };
+		2976626DBE52B819C28C939F /* Pods-Red5ProVideoViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Red5ProVideoViewExample.release.xcconfig"; path = "Target Support Files/Pods-Red5ProVideoViewExample/Pods-Red5ProVideoViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Red5ProVideoViewExample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red5ProVideoViewExample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48776EC723C89471004125FD /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		48776EC923C89479004125FD /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
@@ -48,11 +49,10 @@
 		48776ED523C894A4004125FD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		48776ED723C894AC004125FD /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		48776ED923C896AB004125FD /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		5242FCABDE0AA12884B8293F /* libPods-Red5ProVideoViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Red5ProVideoViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDC19C09B874CF62F9C91CCC /* Pods-Red5ProVideoViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Red5ProVideoViewExample.debug.xcconfig"; path = "Target Support Files/Pods-Red5ProVideoViewExample/Pods-Red5ProVideoViewExample.debug.xcconfig"; sourceTree = "<group>"; };
-		E18E50DB97ADE149CD0BEA83 /* Pods-Red5ProVideoViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Red5ProVideoViewExample.release.xcconfig"; path = "Target Support Files/Pods-Red5ProVideoViewExample/Pods-Red5ProVideoViewExample.release.xcconfig"; sourceTree = "<group>"; };
+		C6824C4E8F60A3A989BAF55D /* libPods-Red5ProVideoViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Red5ProVideoViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F4D90B58895100253B4BCCD9 /* Pods-Red5ProVideoViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Red5ProVideoViewExample.debug.xcconfig"; path = "Target Support Files/Pods-Red5ProVideoViewExample/Pods-Red5ProVideoViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				48776ECC23C89484004125FD /* libz.tbd in Frameworks */,
 				48776ECA23C89479004125FD /* libiconv.2.4.0.tbd in Frameworks */,
 				48776EC823C89471004125FD /* libc++.1.tbd in Frameworks */,
-				B96AB00F1B7F14FCCE5ACE12 /* libPods-Red5ProVideoViewExample.a in Frameworks */,
+				38C89D9801C205F4C78E3609 /* libPods-Red5ProVideoViewExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 				48776EC723C89471004125FD /* libc++.1.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				5242FCABDE0AA12884B8293F /* libPods-Red5ProVideoViewExample.a */,
+				C6824C4E8F60A3A989BAF55D /* libPods-Red5ProVideoViewExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,8 +137,8 @@
 		57A71AB54D248EB92083B98F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BDC19C09B874CF62F9C91CCC /* Pods-Red5ProVideoViewExample.debug.xcconfig */,
-				E18E50DB97ADE149CD0BEA83 /* Pods-Red5ProVideoViewExample.release.xcconfig */,
+				F4D90B58895100253B4BCCD9 /* Pods-Red5ProVideoViewExample.debug.xcconfig */,
+				2976626DBE52B819C28C939F /* Pods-Red5ProVideoViewExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -189,13 +189,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Red5ProVideoViewExample" */;
 			buildPhases = (
-				210F81E0A87F71F7D298ABBE /* [CP] Check Pods Manifest.lock */,
+				7611E80FB539C1494E985156 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				B7A2D97ACC58C6EFB5F2C7F3 /* [CP] Copy Pods Resources */,
+				20E270C19E909E99BF2DF670 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,11 +235,11 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = E964K44BWW;
+						DevelopmentTeam = 4HAH9CD99C;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = E964K44BWW;
+						DevelopmentTeam = 4HAH9CD99C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -287,7 +287,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -297,45 +297,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=~/n/bin/node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		210F81E0A87F71F7D298ABBE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Red5ProVideoViewExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		B7A2D97ACC58C6EFB5F2C7F3 /* [CP] Copy Pods Resources */ = {
+		20E270C19E909E99BF2DF670 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,6 +345,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Red5ProVideoViewExample/Pods-Red5ProVideoViewExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		7611E80FB539C1494E985156 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Red5ProVideoViewExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -459,12 +459,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDC19C09B874CF62F9C91CCC /* Pods-Red5ProVideoViewExample.debug.xcconfig */;
+			baseConfigurationReference = F4D90B58895100253B4BCCD9 /* Pods-Red5ProVideoViewExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Red5ProVideoViewExample/Frameworks\"";
 				INFOPLIST_FILE = Red5ProVideoViewExample/Info.plist;
@@ -482,11 +482,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E18E50DB97ADE149CD0BEA83 /* Pods-Red5ProVideoViewExample.release.xcconfig */;
+			baseConfigurationReference = 2976626DBE52B819C28C939F /* Pods-Red5ProVideoViewExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Red5ProVideoViewExample/Frameworks\"";
 				INFOPLIST_FILE = Red5ProVideoViewExample/Info.plist;
@@ -512,7 +512,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Red5ProVideoViewExample-tvOS/Info.plist";
@@ -541,7 +541,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Red5ProVideoViewExample-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,8 +587,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -640,8 +643,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 4HAH9CD99C;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Frameworks\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

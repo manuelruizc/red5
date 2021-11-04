@@ -1,44 +1,38 @@
-import React from 'react'
+import React from 'react';
 import {
   Button,
   Platform,
   StyleSheet,
   Text,
   TextInput,
-  View
-} from 'react-native'
-import {
-  CheckBox
-} from 'react-native-elements'
-import { 
-  check, 
-  request, 
-  PERMISSIONS 
-} from 'react-native-permissions'
-import { 
-  R5LogLevel,
-} from 'react-native-red5pro'
+  View,
+} from 'react-native';
+import {CheckBox} from 'react-native-elements';
+import {check, request, PERMISSIONS} from 'react-native-permissions';
+import {R5LogLevel} from 'react-native-red5pro';
 
-import Publisher from './src/views/publisher'
-import Subscriber from './src/views/subscriber'
+import Publisher from './src/views/publisher';
+import Subscriber from './src/views/subscriber';
 
 export default class App extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     // Actions.
-    this.onPublish = this.onPublish.bind(this)
-    this.onSubscribe = this.onSubscribe.bind(this)
-    this.onStop = this.onStop.bind(this)
+    this.onPublish = this.onPublish.bind(this);
+    this.onSubscribe = this.onSubscribe.bind(this);
+    this.onStop = this.onStop.bind(this);
 
     // UI Actions.
-    this.onHostChange = this.onHostChange.bind(this)
-    this.onLicenseChange = this.onLicenseChange.bind(this)
-    this.onStreamNameChange = this.onStreamNameChange.bind(this)
-    this.onEnableBackgroundStreamingChange = this.onEnableBackgroundStreamingChange.bind(this)
-    this.onUseAuthenticationChange = this.onUseAuthenticationChange.bind(this)
-    this.onUsernameChange = this.onUsernameChange.bind(this)
-    this.onPasswordChange = this.onPasswordChange.bind(this)
+    this.onHostChange = this.onHostChange.bind(this);
+    this.onLicenseChange = this.onLicenseChange.bind(this);
+    this.onStreamNameChange = this.onStreamNameChange.bind(this);
+    this.onEnableBackgroundStreamingChange = this.onEnableBackgroundStreamingChange.bind(
+      this,
+    );
+    this.onUseAuthenticationChange = this.onUseAuthenticationChange.bind(this);
+    this.onUsernameChange = this.onUsernameChange.bind(this);
+    this.onPasswordChange = this.onPasswordChange.bind(this);
 
     // Props.
     this.state = {
@@ -53,7 +47,7 @@ export default class App extends React.Component {
         underlineColorAndroid: '#00000000',
         clearTextOnFocus: false,
         style: styles.inputField,
-        value: ''
+        value: '',
       },
       licenseFieldProps: {
         placeholder: 'License Key',
@@ -61,7 +55,7 @@ export default class App extends React.Component {
         underlineColorAndroid: '#00000000',
         clearTextOnFocus: false,
         style: styles.inputField,
-        value: ''
+        value: '',
       },
       streamNameFieldProps: {
         placeholder: 'Stream Name',
@@ -69,7 +63,7 @@ export default class App extends React.Component {
         underlineColorAndroid: '#00000000',
         clearTextOnFocus: false,
         style: styles.inputField,
-        value: ''
+        value: '',
       },
       usernameFieldProps: {
         placeholder: 'Username',
@@ -77,7 +71,7 @@ export default class App extends React.Component {
         underlineColorAndroid: '#00000000',
         clearTextOnFocus: true,
         style: styles.inputFieldAuth,
-        value: ''
+        value: '',
       },
       passwordFieldProps: {
         placeholder: 'Password',
@@ -85,7 +79,7 @@ export default class App extends React.Component {
         underlineColorAndroid: '#00000000',
         clearTextOnFocus: true,
         style: [styles.inputFieldAuth, {marginBottom: 20}],
-        value: ''
+        value: '',
       },
       streamProps: {
         collapsable: false,
@@ -99,59 +93,70 @@ export default class App extends React.Component {
           streamBufferTime: 2.0,
           bundleID: 'com.red5pro.reactnative',
           parameters: '',
-          key: Math.floor(Math.random() * 0x10000).toString(16)
+          key: Math.floor(Math.random() * 0x10000).toString(16),
         },
         subscribeVideo: true,
         showDebugView: true,
         logLevel: R5LogLevel.DEBUG,
         useBackfacingCamera: false,
-        enableBackgroundStreaming: false
-      }
-    }
-
+        enableBackgroundStreaming: false,
+      },
+    };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     Promise.all(
-        check(Platform.select({
+      check(
+        Platform.select({
           android: PERMISSIONS.ANDROID.CAMERA,
           ios: PERMISSIONS.IOS.CAMERA,
-        })),
-        check(Platform.select({
+        }),
+      ),
+      check(
+        Platform.select({
           android: PERMISSIONS.ANDROID.RECORD_AUDIO,
           ios: PERMISSIONS.IOS.MICROPHONE,
-        })))
-      .then((response) => {
-        const isAuthorized = /granted/
-        const hasCamera = isAuthorized.test(response.camera)
-        const hasMic = isAuthorized.test(response.microphone)
+        }),
+      ),
+    ).then(response => {
+      const isAuthorized = /granted/;
+      const hasCamera = isAuthorized.test(response.camera);
+      const hasMic = isAuthorized.test(response.microphone);
 
-        if (!hasCamera || !hasMic) {
-          this.requestPermissions()
-          this.setState({
-            hasPermissions: false
-          })
-        } else {
-          this.setState({
-            hasPermissions: true
-          })
-        }
-      })
+      if (!hasCamera || !hasMic) {
+        this.requestPermissions();
+        this.setState({
+          hasPermissions: false,
+        });
+      } else {
+        this.setState({
+          hasPermissions: true,
+        });
+      }
+    });
   }
 
-  render () {
+  render() {
     const {
       useAuthentication,
-      streamProps: {
-        enableBackgroundStreaming
-      }
-    } = this.state
+      streamProps: {enableBackgroundStreaming},
+    } = this.state;
 
-    const assignHostRef = (host) => { this.host_field = host }
-    const assignLicenseRef = (license) => { this.license_field = license }
-    const assignStreamNameRef = (streamName) => { this.stream_name_field = streamName }
-    const assignUsernameRef = (username) => { this.username_field = username }
-    const assignPasswordRef = (password) => { this.password_field = password }
+    const assignHostRef = host => {
+      this.host_field = host;
+    };
+    const assignLicenseRef = license => {
+      this.license_field = license;
+    };
+    const assignStreamNameRef = streamName => {
+      this.stream_name_field = streamName;
+    };
+    const assignUsernameRef = username => {
+      this.username_field = username;
+    };
+    const assignPasswordRef = password => {
+      this.password_field = password;
+    };
 
     if (this.state.hasPermissions && this.state.hasStarted) {
       if (this.state.isPublisher) {
@@ -161,19 +166,17 @@ export default class App extends React.Component {
             style={styles.container}
             onStop={this.onStop}
           />
-        )
-      }
-      else {
+        );
+      } else {
         return (
           <Subscriber
             streamProps={this.state.streamProps}
             style={styles.container}
             onStop={this.onStop}
           />
-        )
+        );
       }
-    }
-    else {
+    } else {
       return (
         <View style={styles.container}>
           <View style={styles.formField}>
@@ -198,18 +201,21 @@ export default class App extends React.Component {
             />
           </View>
           <View style={styles.formField}>
-            <CheckBox title='Allow Background Streaming'
+            <CheckBox
+              title="Allow Background Streaming"
               checked={enableBackgroundStreaming}
               onPress={this.onEnableBackgroundStreamingChange}
             />
           </View>
           <View style={styles.formField}>
-            <CheckBox title='Use Authentication'
+            <CheckBox
+              title="Use Authentication"
               checked={useAuthentication}
               onPress={this.onUseAuthenticationChange}
             />
           </View>
-          { useAuthentication && <View>
+          {useAuthentication && (
+            <View>
               <TextInput
                 ref={assignUsernameRef.bind(this)}
                 {...this.state.usernameFieldProps}
@@ -221,160 +227,189 @@ export default class App extends React.Component {
                 onChangeText={this.onPasswordChange}
               />
             </View>
-          }
-          {!this.state.hasPermissions && <Text style={{color: 'white', backgroundColor: 'blue'}}>Waiting on permissions...</Text>}
-          {this.state.hasPermissions && <View>
-            <Button
-              {...this.state.buttonProps}
-              onPress={this.onSubscribe}
-              title='Subscribe'
-              accessibilityLabel='Subscribe'
-            />
-            <Text style={styles.text}>OR</Text>
-            <Button
-              {...this.state.buttonProps}
-              style={{marginTop: 40}}
-              onPress={this.onPublish}
-              title='Publish'
-              accessibilityLabel='Publish'
-            />
-          </View>
-          }
+          )}
+          {!this.state.hasPermissions && (
+            <Text style={{color: 'white', backgroundColor: 'blue'}}>
+              Waiting on permissions...
+            </Text>
+          )}
+          {this.state.hasPermissions && (
+            <View>
+              <Button
+                {...this.state.buttonProps}
+                onPress={this.onSubscribe}
+                title="Subscribe"
+                accessibilityLabel="Subscribe"
+              />
+              <Text style={styles.text}>OR</Text>
+              <Button
+                {...this.state.buttonProps}
+                style={{marginTop: 40}}
+                onPress={this.onPublish}
+                title="Publish"
+                accessibilityLabel="Publish"
+              />
+            </View>
+          )}
         </View>
-      )
+      );
     }
   }
 
-  requestPermissions () {
-    const isAuthorized = /granted/
-    let camPermission = false
-    let micPermission = false
+  requestPermissions() {
+    const isAuthorized = /granted/;
+    let camPermission = false;
+    let micPermission = false;
 
-    request(Platform.select({
+    request(
+      Platform.select({
         android: PERMISSIONS.ANDROID.CAMERA,
         ios: PERMISSIONS.IOS.CAMERA,
-      }))
-      .then((camResponse) => {
-        camPermission = isAuthorized.test(camResponse)
-        request(Platform.select({
-            android: PERMISSIONS.ANDROID.RECORD_AUDIO,
-            ios: PERMISSIONS.IOS.MICROPHONE,
-          }))
-          .then((micResponse) => {
-            micPermission = isAuthorized.test(micResponse)
+      }),
+    ).then(camResponse => {
+      camPermission = isAuthorized.test(camResponse);
+      request(
+        Platform.select({
+          android: PERMISSIONS.ANDROID.RECORD_AUDIO,
+          ios: PERMISSIONS.IOS.MICROPHONE,
+        }),
+      ).then(micResponse => {
+        micPermission = isAuthorized.test(micResponse);
 
-            this.setState({
-              hasPermissions: camPermission && micPermission
-            })
-          })
-      })
+        this.setState({
+          hasPermissions: camPermission && micPermission,
+        });
+      });
+    });
   }
 
-  getStateFromProps () {
-    const { useAuthentication } = this.state
-    const hostValue = this.host_field.props.value
-    const licenseValue = this.license_field.props.value
-    const streamNameValue = this.stream_name_field.props.value
-    const usernameValue = useAuthentication ? this.username_field.props.value : undefined
-    const passwordValue = useAuthentication ? this.password_field.props.value : undefined
+  getStateFromProps() {
+    const {useAuthentication} = this.state;
+    const hostValue = this.host_field.props.value;
+    const licenseValue = this.license_field.props.value;
+    const streamNameValue = this.stream_name_field.props.value;
+    const usernameValue = useAuthentication
+      ? this.username_field.props.value
+      : undefined;
+    const passwordValue = useAuthentication
+      ? this.password_field.props.value
+      : undefined;
     return {
       hostFieldProps: {...this.state.hostFieldProps, value: hostValue},
       licenseFieldProps: {...this.state.licenseFieldProps, value: licenseValue},
-      streamNameFieldProps: {...this.state.streamNameFieldProps, value: streamNameValue},
-      streamProps: {...this.state.streamProps,
-        configuration: {...this.state.streamProps.configuration,
+      streamNameFieldProps: {
+        ...this.state.streamNameFieldProps,
+        value: streamNameValue,
+      },
+      streamProps: {
+        ...this.state.streamProps,
+        configuration: {
+          ...this.state.streamProps.configuration,
           host: hostValue,
           licenseKey: licenseValue,
           streamName: streamNameValue,
-          parameters: !useAuthentication ? '' : [
-            ['username', usernameValue].join('='),
-            ['password', passwordValue].join('=')
-          ].join(';') + ';'
-        }
-      }  
-    }
+          parameters: !useAuthentication
+            ? ''
+            : [
+                ['username', usernameValue].join('='),
+                ['password', passwordValue].join('='),
+              ].join(';') + ';',
+        },
+      },
+    };
   }
 
-  onSubscribe (event) {
-    const stateUpdate = this.getStateFromProps()
+  onSubscribe(event) {
+    const stateUpdate = this.getStateFromProps();
     this.setState({
       ...stateUpdate,
       isPublisher: false,
-      hasStarted: true
-    })
+      hasStarted: true,
+    });
   }
 
-  onPublish (event) {
-    const stateUpdate = this.getStateFromProps()
+  onPublish(event) {
+    const stateUpdate = this.getStateFromProps();
     this.setState({
       ...stateUpdate,
       isPublisher: true,
-      hasStarted: true
-    })
+      hasStarted: true,
+    });
   }
 
-  onHostChange (text) {
+  onHostChange(text) {
     this.setState({
       hostFieldProps: {...this.state.hostFieldProps, value: text},
-      streamProps: {...this.state.streamProps,
-        configuration: {...this.state.streamProps.configuration, host: text}
-      }
-    })
+      streamProps: {
+        ...this.state.streamProps,
+        configuration: {...this.state.streamProps.configuration, host: text},
+      },
+    });
   }
 
-  onLicenseChange (text) {
+  onLicenseChange(text) {
     this.setState({
       licenseFieldProps: {...this.state.licenseFieldProps, value: text},
-      streamProps: {...this.state.streamProps,
-        configuration: {...this.state.streamProps.configuration, licenseKey: text}
-      }
-    })
+      streamProps: {
+        ...this.state.streamProps,
+        configuration: {
+          ...this.state.streamProps.configuration,
+          licenseKey: text,
+        },
+      },
+    });
   }
 
-  onStreamNameChange (text) {
+  onStreamNameChange(text) {
     this.setState({
       streamNameFieldProps: {...this.state.streamNameFieldProps, value: text},
-      streamProps: {...this.state.streamProps,
-        configuration: {...this.state.streamProps.configuration, streamName: text}
-      }
-    })
+      streamProps: {
+        ...this.state.streamProps,
+        configuration: {
+          ...this.state.streamProps.configuration,
+          streamName: text,
+        },
+      },
+    });
   }
 
-  onUsernameChange (text) {
+  onUsernameChange(text) {
     this.setState({
-      usernameFieldProps: {...this.state.usernameFieldProps, value: text}
-    })
+      usernameFieldProps: {...this.state.usernameFieldProps, value: text},
+    });
   }
 
-  onPasswordChange (text) {
+  onPasswordChange(text) {
     this.setState({
-      passwordFieldProps: {...this.state.passwordFieldProps, value: text}
-    })
+      passwordFieldProps: {...this.state.passwordFieldProps, value: text},
+    });
   }
 
-  onEnableBackgroundStreamingChange () {
-    const { streamProps: { enableBackgroundStreaming } } = this.state
+  onEnableBackgroundStreamingChange() {
+    const {
+      streamProps: {enableBackgroundStreaming},
+    } = this.state;
     this.setState({
       streamProps: {
         ...this.state.streamProps,
-        enableBackgroundStreaming: !enableBackgroundStreaming
-      }
-    })
+        enableBackgroundStreaming: !enableBackgroundStreaming,
+      },
+    });
   }
 
-  onUseAuthenticationChange () {
-    const { useAuthentication } = this.state
+  onUseAuthenticationChange() {
+    const {useAuthentication} = this.state;
     this.setState({
-      useAuthentication: !useAuthentication
-    })
+      useAuthentication: !useAuthentication,
+    });
   }
 
-  onStop (event) {
-    console.log('App:onStop()')
+  onStop(event) {
+    console.log('App:onStop()');
     this.setState({
       hasStarted: false,
-      isInErrorState: false
-    })
+      isInErrorState: false,
+    });
   }
 }
 
@@ -382,16 +417,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   formField: {
-    padding: 10
+    padding: 10,
   },
   inputField: {
     paddingLeft: 10,
     height: 36,
     borderBottomColor: 'gray',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   inputFieldAuth: {
     padding: 10,
@@ -400,12 +435,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     height: 36,
     borderBottomColor: 'gray',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   text: {
     left: 0,
     right: 0,
     textAlign: 'center',
-    padding: 20
-  }
-})
+    padding: 20,
+  },
+});
